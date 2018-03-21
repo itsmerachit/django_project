@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+
+{% block page_content %}
+    {% if error %}
+        <span style="color: red">Please fix error and resubmit</span>
+    {% endif %}
+    <div></div>
+    <form method="post" action="{% url 'website_api:article_add' %}">
+        {% csrf_token %}
+        <input name="title" placeholder="title" value="{{ title }}">
+        <textarea name="content" placeholder="write something...">{{ content }}</textarea>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
+
+{% block page_title %}
+    <title>Add New Article</title>
+{% endblock %}

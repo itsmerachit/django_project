@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+
+{% block page_content %}
+        <h1>{{ article.title }}</h1>
+        <span>{{ article.author.first_name }}</span>
+        <span>{{ article.created_at | date:"Y d" }}</span>
+
+        <div>{{ article.content }}</div>
+{% endblock %}
+
+{% block page_title %}
+    <title>{{ article.title }}</title>
+    <meta property="og:title" content="{{ article.title }}">
+{% endblock %}
