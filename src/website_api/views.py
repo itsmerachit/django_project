@@ -43,8 +43,8 @@ def facebook_oauth(request):
     state=request.Get['state']
     grant=request.Get['code']
     user_id=cache.request.id
-    client_id = '173482556629782'
-    client_secret = '091383910b057de7e25e69544f58272c'
+    client_id = ''
+    client_secret = ''
     redirect_uri = 'http://127.0.0.1/api/articles'
 
     data = {'client_id': client_id, 'redirect_uri': redirect_uri,
